@@ -10,7 +10,7 @@ authors:
     email: alex.henderson@manchester.ac.uk
     website: https://alexhenderson.info
 version: v1.0.0
-date-released: "2022-02-10"
+date-released: "2022-02-14"
 license: MIT
 license-url: https://spdx.org/licenses/MIT#licenseText
 repository: "https://github.com/AlexHenderson/pyutils/"
