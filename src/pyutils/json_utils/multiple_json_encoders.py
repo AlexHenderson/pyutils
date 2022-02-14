@@ -9,14 +9,15 @@ class MultipleJsonEncoders(json.JSONEncoder):
     """
     Class extending :class:`json.JSONEncoder` to handle multiple JSONEncoders of different types.
 
-    Code taken directly from `stackoverflow`_ with a small modification. If a number of different encoders are passed
-    to the constructor, the input is tested against each in turn.
+    Code taken from `stackoverflow`_ with only a small modification. If a number of different encoders are passed
+    to the constructor, the input is tested against each in turn. The order in which the encoders are listed as
+    arguments, is the order in which they are evaluated.
 
     Example::
 
-        >>> from src.pyutils import MultipleJsonEncoders
+        >>> from src.pyutils.json_utils.multiple_json_encoders import MultipleJsonEncoders
         >>> encoder = MultipleJsonEncoders(JsonPintEncoder, JsonDatetimeEncoder)
-        >>> jsonoutput = json.dumps(something_with_pint_or_datetime, indent=4, cls=encoder)
+        >>> jsonoutput = json.dumps(pint_or_datetime_variable, indent=4, cls=encoder)
 
     .. _`stackoverflow`: https://stackoverflow.com/questions/65338261/combine-multiple-json-encoders
     """

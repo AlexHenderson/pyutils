@@ -8,7 +8,7 @@ from typing import Dict
 import pint
 
 
-def unitmanager(label: str, unit: pint.Unit = None, value: Number = None) -> Dict[str, str]:
+def unit_manager(label: str, unit: pint.Unit = None, value: Number = None) -> Dict[str, str]:
     """
     Formats a quantity label suitable for use on the x-axis of a chart.
 
@@ -17,9 +17,9 @@ def unitmanager(label: str, unit: pint.Unit = None, value: Number = None) -> Dic
 
     Example for a wavelength of 280 nm::
 
-        >>> from src.pyutils.pintutils import unitmanager
-        >>> ureg = unitmanager.pint.UnitRegistry()
-        >>> output = unitmanager.unitmanager('wavelength', ureg.nanometer, 280)
+        >>> from src.pyutils.pint_utils import unit_manager
+        >>> ureg = unit_manager.pint.UnitRegistry()
+        >>> output = unit_manager.unit_manager('wavelength',ureg.nanometer,280)
         >>> output
         {'name': 'wavelength', 'unit': 'nm', 'label': 'wavelength (nm)', 'value': 280, 'quantity': '280 nm'}
         >>> print(output['label'])
@@ -29,9 +29,9 @@ def unitmanager(label: str, unit: pint.Unit = None, value: Number = None) -> Dic
 
     Example for unitless absorbance::
 
-        >>> from src.pyutils.pintutils import unitmanager
-        >>> ureg = unitmanager.pint.UnitRegistry()
-        >>> output = unitmanager.unitmanager('absorbance')
+        >>> from src.pyutils.pint_utils import unit_manager
+        >>> ureg = unit_manager.pint.UnitRegistry()
+        >>> output = unit_manager.unit_manager('absorbance')
         >>> output
         {'name': 'absorbance', 'unit': '', 'label': 'absorbance'}
         >>> print(output['label'])
@@ -47,7 +47,7 @@ def unitmanager(label: str, unit: pint.Unit = None, value: Number = None) -> Dic
     :rtype: Dict[str, str]
     """
 
-    if unit == None:
+    if unit is None:
         ureg = pint.UnitRegistry()
         unit = ureg.dimensionless
 

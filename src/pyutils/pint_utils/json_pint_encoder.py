@@ -11,7 +11,7 @@ class JsonPintEncoder(json.JSONEncoder):
     """
     Class extending :class:`json.JSONEncoder` to handle :class:`pint` Quantity and Unit objects.
 
-    Code taken directly from `stackoverflow`_
+    Code taken from `stackoverflow`_
 
     .. _`stackoverflow`: https://stackoverflow.com/questions/65338261/combine-multiple-json-encoders
     """
