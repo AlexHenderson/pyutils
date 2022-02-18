@@ -133,6 +133,6 @@ Example:
 Copyright (c) 2021-2022 Alex Henderson (alex.henderson@manchester.ac.uk)   
 Licensed under the MIT License. See https://opensource.org/licenses/MIT      
 SPDX-License-Identifier: MIT   
-Version 1.0.0   
+Version 1.1.0   
 See https://github.com/AlexHenderson/pyutils/ for the most recent version  
 
