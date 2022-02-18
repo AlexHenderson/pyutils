@@ -4,6 +4,8 @@ Various Python utilities
 Requires Python 3.7 or higher.  
 Other requirements are listed per utility. 
 
+pip install pyutils-AlexHenderson==1.1.0
+
 ## Utilities ##
 
 - unit_manager 
