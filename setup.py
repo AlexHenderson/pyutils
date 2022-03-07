@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="pyutils-AlexHenderson",
-    version="1.1.0",
+    version="1.1.1",
     author="Alex Henderson",
     author_email="alex.henderson@manchester.ac.uk",
     description="Various python utilities",
@@ -27,4 +27,7 @@ setup(
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     python_requires=">=3.7",
+    install_requires=[
+        'pint'
+    ],
 )

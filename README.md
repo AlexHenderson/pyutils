@@ -4,7 +4,7 @@ Various Python utilities
 Requires Python 3.7 or higher.  
 Other requirements are listed per utility. 
 
-pip install pyutils-AlexHenderson==1.1.0
+`pip install pyutils-AlexHenderson==1.1.1`
 
 ## Utilities ##
 
@@ -73,7 +73,7 @@ Example:
     >>> print(jsonoutput)
     "5.6 second"
 
-### datetimeutils/json_datetime_encoder ###
+### datetime_utils/json_datetime_encoder ###
 #### Details ####
 
 JSON can only encode certain variable types as output. 
@@ -135,6 +135,6 @@ Example:
 Copyright (c) 2021-2022 Alex Henderson (alex.henderson@manchester.ac.uk)   
 Licensed under the MIT License. See https://opensource.org/licenses/MIT      
 SPDX-License-Identifier: MIT   
-Version 1.1.0   
+Version 1.1.1   
 See https://github.com/AlexHenderson/pyutils/ for the most recent version  
 
