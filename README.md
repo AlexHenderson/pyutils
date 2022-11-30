@@ -63,12 +63,13 @@ and passes that to the JSON encoding function.
 Example:
     
     >>> from pint import Quantity, Unit, UnitRegistry
-    >>> from pyutils.pint_utils.json_pint_encoder import json_pint_encoder
+    >>> from pyutils.pint_utils.json_pint_encoder import JsonPintEncoder
+    >>> import json
 
     >>> ureg = UnitRegistry()
     >>> duration = Quantity(5.6, ureg.sec)
 
-    >>> encoder = json_pint_encoder
+    >>> encoder = JsonPintEncoder
     >>> jsonoutput = json.dumps(duration, cls=encoder)
     >>> print(jsonoutput)
     "5.6 second"
@@ -87,11 +88,11 @@ Example:
     >>> import datetime
     >>> import json
 
-    >>> from pyutils.datetime_utils.json_datetime_encoder import json_datetime_encoder
+    >>> from pyutils.datetime_utils.json_datetime_encoder import JsonDatetimeEncoder
 
     >>> example = datetime.datetime(2000, 12, 25, 13, 23)
 
-    >>> encoder = json_datetime_encoder
+    >>> encoder = JsonDatetimeEncoder
     >>> jsonoutput = json.dumps(example, cls=encoder)
     >>> print(jsonoutput)
     "2000-12-25T13:23:00"
@@ -112,15 +113,15 @@ Example:
     
     >>> from pint import Quantity, Unit, UnitRegistry
     
-    >>> from pyutils.json_utils.multiple_json_encoders import multiple_json_encoders
-    >>> from pyutils.pint_utils.json_pint_encoder import json_pint_encoder
-    >>> from pyutils.datetime_utils.json_datetime_encoder import json_datetime_encoder
+    >>> from pyutils.json_utils.multiple_json_encoders import MultipleJsonEncoders
+    >>> from pyutils.pint_utils.json_pint_encoder import JsonPintEncoder
+    >>> from pyutils.datetime_utils.json_datetime_encoder import JsonDatetimeEncoder
 
     >>> christmas_time = datetime.datetime(2000, 12, 25, 13, 23)
     >>> ureg = UnitRegistry()
     >>> duration = Quantity(5.6, ureg.sec)
 
-    >>> encoder = multiple_json_encoders(json_pint_encoder, json_datetime_encoder)
+    >>> encoder = MultipleJsonEncoders(JsonPintEncoder, JsonDatetimeEncoder)
 
     >>> christmas_time_output = json.dumps(christmas_time, cls=encoder)
     >>> print(christmas_time_output)
@@ -137,4 +138,3 @@ Licensed under the MIT License. See https://opensource.org/licenses/MIT
 SPDX-License-Identifier: MIT   
 Version 1.1.1   
 See https://github.com/AlexHenderson/pyutils/ for the most recent version  
-
